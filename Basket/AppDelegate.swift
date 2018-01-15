@@ -25,8 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fileURL = URL(fileURLWithPath: path)
 
         let store = FileLogStore(fileURL: fileURL)
-        store.putLog(["hoge": "fuga"], labels: ["aaa", "test"])
-        store.putLog(123, labels: ["aaa", "test"])
-        store.putLog("hello", labels: ["\"aaa", "[hoge][fuga],xxx"])
+        do {
+            try store.putLog(["hoge": "fuga"], labels: ["aaa", "test"])
+            try store.putLog(123, labels: ["aaa", "test"])
+            try store.putLog("hello", labels: ["\"aaa", "[hoge][fuga],xxx"])
+        } catch {
+            print(error)
+        }
     }
 }
