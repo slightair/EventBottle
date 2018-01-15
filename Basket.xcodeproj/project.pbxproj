@@ -13,6 +13,14 @@
 		7FF077ED200CA18E009985CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077EC200CA18E009985CA /* Assets.xcassets */; };
 		7FF077F0200CA18E009985CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077EE200CA18E009985CA /* LaunchScreen.storyboard */; };
 		7FF077FB200CA18E009985CA /* BasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077FA200CA18E009985CA /* BasketTests.swift */; };
+		7FF07811200CA32F009985CA /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07807200CA32F009985CA /* LogCell.swift */; };
+		7FF07812200CA32F009985CA /* LogLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07808200CA32F009985CA /* LogLabelView.swift */; };
+		7FF07813200CA32F009985CA /* LogViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07809200CA32F009985CA /* LogViewerViewController.swift */; };
+		7FF07814200CA32F009985CA /* FileLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780B200CA32F009985CA /* FileLogDataSource.swift */; };
+		7FF07815200CA32F009985CA /* LogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780C200CA32F009985CA /* LogDataSource.swift */; };
+		7FF07816200CA32F009985CA /* XCGLoggerFileLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780D200CA32F009985CA /* XCGLoggerFileLogDataSource.swift */; };
+		7FF07817200CA32F009985CA /* FileLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780F200CA32F009985CA /* FileLogStore.swift */; };
+		7FF07818200CA32F009985CA /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07810200CA32F009985CA /* LogStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,15 @@
 		7FF077F6200CA18E009985CA /* BasketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF077FA200CA18E009985CA /* BasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTests.swift; sourceTree = "<group>"; };
 		7FF077FC200CA18E009985CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FF07807200CA32F009985CA /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		7FF07808200CA32F009985CA /* LogLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLabelView.swift; sourceTree = "<group>"; };
+		7FF07809200CA32F009985CA /* LogViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerViewController.swift; sourceTree = "<group>"; };
+		7FF0780B200CA32F009985CA /* FileLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogDataSource.swift; sourceTree = "<group>"; };
+		7FF0780C200CA32F009985CA /* LogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDataSource.swift; sourceTree = "<group>"; };
+		7FF0780D200CA32F009985CA /* XCGLoggerFileLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLoggerFileLogDataSource.swift; sourceTree = "<group>"; };
+		7FF0780F200CA32F009985CA /* FileLogStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogStore.swift; sourceTree = "<group>"; };
+		7FF07810200CA32F009985CA /* LogStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
+		7FF07819200CA378009985CA /* Basket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Basket-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +94,14 @@
 		7FF077E4200CA18E009985CA /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				7FF07805200CA2EA009985CA /* Log */,
 				7FF077E5200CA18E009985CA /* AppDelegate.swift */,
 				7FF077E7200CA18E009985CA /* ViewController.swift */,
 				7FF077E9200CA18E009985CA /* Main.storyboard */,
 				7FF077EC200CA18E009985CA /* Assets.xcassets */,
 				7FF077EE200CA18E009985CA /* LaunchScreen.storyboard */,
 				7FF077F1200CA18E009985CA /* Info.plist */,
+				7FF07819200CA378009985CA /* Basket-Bridging-Header.h */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -94,6 +113,45 @@
 				7FF077FC200CA18E009985CA /* Info.plist */,
 			);
 			path = BasketTests;
+			sourceTree = "<group>";
+		};
+		7FF07805200CA2EA009985CA /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				7FF0780A200CA32F009985CA /* LogDataSource */,
+				7FF0780E200CA32F009985CA /* LogStore */,
+				7FF07806200CA32F009985CA /* LogViewer */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		7FF07806200CA32F009985CA /* LogViewer */ = {
+			isa = PBXGroup;
+			children = (
+				7FF07807200CA32F009985CA /* LogCell.swift */,
+				7FF07808200CA32F009985CA /* LogLabelView.swift */,
+				7FF07809200CA32F009985CA /* LogViewerViewController.swift */,
+			);
+			path = LogViewer;
+			sourceTree = "<group>";
+		};
+		7FF0780A200CA32F009985CA /* LogDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				7FF0780B200CA32F009985CA /* FileLogDataSource.swift */,
+				7FF0780C200CA32F009985CA /* LogDataSource.swift */,
+				7FF0780D200CA32F009985CA /* XCGLoggerFileLogDataSource.swift */,
+			);
+			path = LogDataSource;
+			sourceTree = "<group>";
+		};
+		7FF0780E200CA32F009985CA /* LogStore */ = {
+			isa = PBXGroup;
+			children = (
+				7FF0780F200CA32F009985CA /* FileLogStore.swift */,
+				7FF07810200CA32F009985CA /* LogStore.swift */,
+			);
+			path = LogStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +203,7 @@
 				TargetAttributes = {
 					7FF077E1200CA18E009985CA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					7FF077F5200CA18E009985CA = {
@@ -198,8 +257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF07813200CA32F009985CA /* LogViewerViewController.swift in Sources */,
+				7FF07814200CA32F009985CA /* FileLogDataSource.swift in Sources */,
 				7FF077E8200CA18E009985CA /* ViewController.swift in Sources */,
 				7FF077E6200CA18E009985CA /* AppDelegate.swift in Sources */,
+				7FF07817200CA32F009985CA /* FileLogStore.swift in Sources */,
+				7FF07816200CA32F009985CA /* XCGLoggerFileLogDataSource.swift in Sources */,
+				7FF07818200CA32F009985CA /* LogStore.swift in Sources */,
+				7FF07812200CA32F009985CA /* LogLabelView.swift in Sources */,
+				7FF07815200CA32F009985CA /* LogDataSource.swift in Sources */,
+				7FF07811200CA32F009985CA /* LogCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,11 +419,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Basket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.Basket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Basket/Basket-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,11 +436,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Basket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.Basket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Basket/Basket-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
