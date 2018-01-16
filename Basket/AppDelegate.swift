@@ -7,30 +7,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
+        let path = NSTemporaryDirectory() + "hoge.log"
+        let fileURL = URL(fileURLWithPath: path)
+        print(path)
+
+        let logStore = FileLogStore(fileURL: fileURL)
+        let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController() as! ViewController
+        viewController.logStore = logStore
+        viewController.title = "View"
+
+        let logDataSource = BasketFileLogDataSource(fileURL: fileURL)
+        let logViewerViewController = LogViewerViewController(logDataSource: logDataSource)
+        logViewerViewController.title = "Logs"
+
         let tabController = UITabBarController()
         tabController.viewControllers = [
-            UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController()!,
+            viewController,
+            logViewerViewController,
         ]
         window?.rootViewController = tabController
         window?.makeKeyAndVisible()
 
-        test()
-
         return true
-    }
-
-    func test() {
-        let path = NSTemporaryDirectory() + "hoge.log"
-        print(path)
-        let fileURL = URL(fileURLWithPath: path)
-
-        let store = FileLogStore(fileURL: fileURL)
-        do {
-            try store.putLog(["hoge": "fuga"], labels: ["aaa", "test"])
-            try store.putLog(123, labels: ["aaa", "test"])
-            try store.putLog("hello", labels: ["\"aaa", "[hoge][fuga],xxx"])
-        } catch {
-            print(error)
-        }
     }
 }

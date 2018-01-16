@@ -17,7 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="crT-Ok-hpa">
+                                <rect key="frame" x="0.0" y="173.5" width="375" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axm-y7-hDD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="Event1"/>
+                                        <connections>
+                                            <action selector="didTapEvent1Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xwh-61-E4R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-JU-6gZ">
+                                        <rect key="frame" x="0.0" y="145" width="375" height="30"/>
+                                        <state key="normal" title="Event2"/>
+                                        <connections>
+                                            <action selector="didTapEvent2Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hs4-3w-5Nw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWu-82-Vfp">
+                                        <rect key="frame" x="0.0" y="290" width="375" height="30"/>
+                                        <state key="normal" title="Event3"/>
+                                        <connections>
+                                            <action selector="didTapEvent3Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UEj-Zk-m9v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="qnW-b5-CPz"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="crT-Ok-hpa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RFJ-ZK-d4z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="crT-Ok-hpa" secondAttribute="trailing" id="oT2-kJ-KID"/>
+                            <constraint firstItem="crT-Ok-hpa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pBh-OF-ywO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
