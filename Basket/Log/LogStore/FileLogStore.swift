@@ -1,12 +1,12 @@
 import Foundation
 
-enum FileLogStoreError: Error {
+public enum FileLogStoreError: Error {
     case couldNotCreateLogFile
     case couldNotEncodeLogData
 }
 
-class FileLogStore: LogStore {
-    static let dateFormatter: DateFormatter = {
+public class FileLogStore: LogStore {
+    public static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
@@ -15,10 +15,10 @@ class FileLogStore: LogStore {
         return formatter
     }()
 
-    let fileURL: URL
-    var fileHandle: FileHandle?
+    public let fileURL: URL
+    private var fileHandle: FileHandle?
 
-    init(fileURL: URL) {
+    public init(fileURL: URL) {
         self.fileURL = fileURL
     }
 
@@ -46,7 +46,7 @@ class FileLogStore: LogStore {
         return fileHandle
     }
 
-    func putLog(_ log: Any, date: Date, labels: [String]) throws {
+    public func putLog(_ log: Any, date: Date, labels: [String]) throws {
         let fileHandle = try openFileIfNeeded()
         guard let logData = (FileLogStore.logString(log: log, date: date, labels: labels) + "\n").data(using: .utf8) else {
             throw FileLogStoreError.couldNotEncodeLogData
@@ -54,7 +54,7 @@ class FileLogStore: LogStore {
         fileHandle.write(logData)
     }
 
-    static func logString(log: Any, date: Date, labels: [String]) -> String {
+    public static func logString(log: Any, date: Date, labels: [String]) -> String {
         let dateString = FileLogStore.dateFormatter.string(from: date)
         let labelsString = labels.map{ $0.replacingOccurrences(of: "\"", with: "\\\"") }.map{"\"\($0)\""}.joined(separator: ",")
 

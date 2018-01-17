@@ -1,12 +1,12 @@
 import Foundation
 
-struct Log {
+public struct Log {
     let date: Date
     let labels: [String]
     let body: String
 }
 
-protocol LogDataSource: class {
+public protocol LogDataSource: class {
     var logs: [Log] { get }
 
     func load(completion: @escaping (Bool) -> Void)

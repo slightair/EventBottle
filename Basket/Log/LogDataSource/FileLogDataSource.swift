@@ -1,35 +1,34 @@
 import Foundation
 
-class FileLogDataSource: LogDataSource {
-    private let bufferSize = 4096
+open class FileLogDataSource: LogDataSource {
+    public let bufferSize = 4096
+    public let loadQueue = DispatchQueue.global(qos: .background)
 
-    let fileURL: URL
-    var logs: [Log] = []
+    public let fileURL: URL
 
-    let loadQueue = DispatchQueue.global(qos: .background)
-
-    var currentLogDate: Date?
-    var currentLogLabels: [String] = []
-    var currentLogBody: String = ""
+    public var logs: [Log] = []
+    public var currentLogDate: Date?
+    public var currentLogLabels: [String] = []
+    public var currentLogBody: String = ""
 
     init(fileURL: URL) {
         self.fileURL = fileURL
     }
 
-    private func reset() {
+    open func reset() {
         logs = []
         currentLogDate = nil
         currentLogLabels = []
         currentLogBody = ""
     }
 
-    func readLine(_: String) {
+    open func readLine(_: String) {
     }
 
-    func didLoadLogFile() {
+    open func didLoadLogFile() {
     }
 
-    func load(completion: @escaping (Bool) -> Void) {
+    public func load(completion: @escaping (Bool) -> Void) {
         reset()
 
         loadQueue.async {

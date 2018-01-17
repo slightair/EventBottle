@@ -1,6 +1,6 @@
 import Foundation
 
-class XCGLoggerFileLogDataSource: FileLogDataSource {
+public class XCGLoggerFileLogDataSource: FileLogDataSource {
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = .current
@@ -15,7 +15,7 @@ class XCGLoggerFileLogDataSource: FileLogDataSource {
         return regexp
     }()
 
-    override func readLine(_ line: String) {
+    override public func readLine(_ line: String) {
         if let result = headerPattern.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)) {
             let terms = (1 ..< result.numberOfRanges).map { String(line[Range(result.range(at: $0), in: line)!]) }
 
@@ -31,7 +31,7 @@ class XCGLoggerFileLogDataSource: FileLogDataSource {
         }
     }
 
-    override func didLoadLogFile() {
+    override public func didLoadLogFile() {
         if let currentLogDate = currentLogDate {
             logs.append(Log(date: currentLogDate, labels: currentLogLabels, body: currentLogBody))
         }

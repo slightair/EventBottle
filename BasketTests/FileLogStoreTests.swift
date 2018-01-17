@@ -1,7 +1,7 @@
 import XCTest
-@testable import Basket
+import Basket
 
-class BasketTests: XCTestCase {
+class FileLogStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }

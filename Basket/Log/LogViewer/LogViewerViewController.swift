@@ -1,31 +1,31 @@
 import UIKit
 
-class LogViewerViewController: UIViewController, UITableViewDataSource {
-    let logDataSource: LogDataSource
+public class LogViewerViewController: UIViewController, UITableViewDataSource {
+    public let logDataSource: LogDataSource
 
-    let tableView = UITableView()
-    let activityIndicatorView = UIActivityIndicatorView()
-    let activityIndicatorBackgroundView = UIView()
-    let errorMessageLabel = UILabel()
-    let errorMessageBackgroundView = UIView()
+    private let tableView = UITableView()
+    private let activityIndicatorView = UIActivityIndicatorView()
+    private let activityIndicatorBackgroundView = UIView()
+    private let errorMessageLabel = UILabel()
+    private let errorMessageBackgroundView = UIView()
 
-    var isLoading = false {
+    private var isLoading = false {
         didSet {
             activityIndicatorBackgroundView.isHidden = !isLoading
         }
     }
 
-    init(logDataSource: LogDataSource) {
+    public init(logDataSource: LogDataSource) {
         self.logDataSource = logDataSource
 
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder _: NSCoder) {
+    public required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         setUpSubviews()
@@ -33,7 +33,7 @@ class LogViewerViewController: UIViewController, UITableViewDataSource {
         refresh()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         refresh()
@@ -107,11 +107,11 @@ class LogViewerViewController: UIViewController, UITableViewDataSource {
         errorMessageBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+    public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return logDataSource.logs.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LogCell.defaultIdentifier, for: indexPath) as? LogCell else {
             fatalError("Unexpected cell")
         }
