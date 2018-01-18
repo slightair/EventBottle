@@ -11,7 +11,7 @@ open class FileLogDataSource: LogDataSource {
     public var currentLogLabels: [String] = []
     public var currentLogBody: String = ""
 
-    init(fileURL: URL) {
+    public init(fileURL: URL) {
         self.fileURL = fileURL
     }
 

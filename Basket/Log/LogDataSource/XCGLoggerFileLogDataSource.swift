@@ -1,13 +1,6 @@
 import Foundation
 
 public class XCGLoggerFileLogDataSource: FileLogDataSource {
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = .current
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        return formatter
-    }()
-
     private let headerPattern: NSRegularExpression = {
         guard let regexp = try? NSRegularExpression(pattern: "(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}.\\d{3})\\s\\[(.+?)\\]\\s(.+)") else {
             fatalError("Regular expression pattern is invalid")

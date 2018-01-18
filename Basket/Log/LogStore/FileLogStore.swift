@@ -41,6 +41,7 @@ public class FileLogStore: LogStore {
         }
 
         let fileHandle = try FileHandle(forWritingTo: fileURL)
+        fileHandle.seekToEndOfFile()
         self.fileHandle = fileHandle
 
         return fileHandle
