@@ -4,7 +4,7 @@ public class BasketFileLogDataSource: FileLogDataSource {
     let dateFormatter = FileLogStore.dateFormatter
 
     let headerPattern: NSRegularExpression = {
-        guard let regexp = try? NSRegularExpression(pattern: "date:(.+)\tlabels:((?:\".+?\",?)+?)\tbody:(.+)") else {
+        guard let regexp = try? NSRegularExpression(pattern: "^date:(.+)\tlabels:((?:\".+?\",?)+?)\tbody:(.+)$") else {
             fatalError("Regular expression pattern is invalid")
         }
         return regexp
@@ -27,7 +27,7 @@ public class BasketFileLogDataSource: FileLogDataSource {
             .map { $0.replacingOccurrences(of: "\\\"", with: "\"") }
     }
 
-    override public func readLine(_ line: String) {
+    public override func readLine(_ line: String) {
         if let result = headerPattern.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)) {
             let terms = (1 ..< result.numberOfRanges).map { String(line[Range(result.range(at: $0), in: line)!]) }
 
@@ -43,7 +43,7 @@ public class BasketFileLogDataSource: FileLogDataSource {
         }
     }
 
-    override public func didLoadLogFile() {
+    public override func didLoadLogFile() {
         if let currentLogDate = currentLogDate {
             logs.append(Log(date: currentLogDate, labels: currentLogLabels, body: currentLogBody))
         }

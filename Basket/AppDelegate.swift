@@ -4,7 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         let path = NSTemporaryDirectory() + "hoge.log"
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabController.viewControllers = [
             viewController,
             logViewerViewController,
-        ].map { UINavigationController(rootViewController: $0 )}
+        ].map { UINavigationController(rootViewController: $0) }
         window?.rootViewController = tabController
         window?.makeKeyAndVisible()
 

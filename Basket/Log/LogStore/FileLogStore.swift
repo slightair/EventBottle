@@ -57,7 +57,7 @@ public class FileLogStore: LogStore {
 
     public static func logString(log: Any, date: Date, labels: [String]) -> String {
         let dateString = FileLogStore.dateFormatter.string(from: date)
-        let labelsString = labels.map{ $0.replacingOccurrences(of: "\"", with: "\\\"") }.map{"\"\($0)\""}.joined(separator: ",")
+        let labelsString = labels.map { $0.replacingOccurrences(of: "\"", with: "\\\"") }.map { "\"\($0)\"" }.joined(separator: ",")
 
         return [
             "date:\(dateString)",

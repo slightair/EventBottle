@@ -12,7 +12,7 @@ extension FileLogDataSource {
         while !eof {
             if let range = buffer.range(of: delimiter) {
                 if let line = String(data: buffer.subdata(in: 0 ..< range.lowerBound), encoding: .utf8) {
-                    self.readLine(line)
+                    readLine(line)
                 }
                 buffer.removeSubrange(0 ..< range.upperBound)
                 continue
@@ -21,13 +21,13 @@ extension FileLogDataSource {
             eof = true
             if buffer.count > 0 {
                 if let line = String(data: buffer, encoding: .utf8) {
-                    self.readLine(line)
+                    readLine(line)
                 }
                 buffer.count = 0
                 continue
             }
         }
 
-        self.didLoadLogFile()
+        didLoadLogFile()
     }
 }

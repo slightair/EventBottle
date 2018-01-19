@@ -5,13 +5,13 @@ class FileLogStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
 
     func testLogString() {
-        let date = Date(timeIntervalSince1970: 1514764800) // 2018-01-01 00:00:00 +0000
+        let date = Date(timeIntervalSince1970: 1_514_764_800) // 2018-01-01 00:00:00 +0000
 
         let result1 = FileLogStore.logString(log: 123, date: date, labels: ["aaa", "test"])
         let expected1 = "date:2018-01-01T00:00:00.000Z\tlabels:\"aaa\",\"test\"\tbody:123"

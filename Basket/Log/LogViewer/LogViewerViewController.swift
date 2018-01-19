@@ -25,7 +25,7 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpSubviews()
@@ -33,7 +33,7 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
         refresh()
     }
 
-    override public func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         refresh()
