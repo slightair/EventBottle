@@ -46,6 +46,7 @@ class LogCell: UITableViewCell {
     private func setUpSubviews() {
         dateLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
         dateLabel.textColor = .darkGray
+        dateLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         labelsView.spacing = labelMargin
         bodyLabel.font = UIFont.systemFont(ofSize: fontSize)
         bodyLabel.textColor = .gray
@@ -83,9 +84,16 @@ class LogCell: UITableViewCell {
 
     private func update() {
         dateLabel.text = dateFormatter.string(from: log.date)
+
+        var priority: Float = 1000
         log.labels.forEach {
             let labelView = LogLabelView(labelText: $0)
+            labelView.setContentCompressionResistancePriority(UILayoutPriority(priority), for: .horizontal)
             labelsView.addArrangedSubview(labelView)
+
+            if priority > 200 {
+                priority -= 100
+            }
         }
         labelsView.addArrangedSubview(labelsSpacerView)
         bodyLabel.text = log.body

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabController.viewControllers = [
             viewController,
             logViewerViewController,
-        ]
+        ].map { UINavigationController(rootViewController: $0 )}
         window?.rootViewController = tabController
         window?.makeKeyAndVisible()
 
