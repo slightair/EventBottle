@@ -1,20 +1,20 @@
 import Foundation
 
-public struct Log {
+public struct Event {
     public let date: Date
     public let labels: [String]
     public let body: String
 }
 
-public protocol LogDataSource: class {
+public protocol EventDataSource: class {
     var dateFormatter: DateFormatter { get }
 
-    var logs: [Log] { get }
+    var events: [Event] { get }
 
     func load(completion: @escaping (Bool) -> Void)
 }
 
-extension LogDataSource {
+extension EventDataSource {
     public var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.locale = .current

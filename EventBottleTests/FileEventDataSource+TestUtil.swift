@@ -1,11 +1,11 @@
 import Foundation
-import Basket
+import EventBottle
 
-extension FileLogDataSource {
-    func loadTestLog(_ log: String) {
+extension FileEventDataSource {
+    func loadTestEvents(_ events: String) {
         reset()
 
-        var buffer = log.data(using: .utf8)!
+        var buffer = events.data(using: .utf8)!
         let delimiter = "\n".data(using: .utf8)!
 
         var eof = false
@@ -28,6 +28,6 @@ extension FileLogDataSource {
             }
         }
 
-        didLoadLogFile()
+        didLoadEvents()
     }
 }

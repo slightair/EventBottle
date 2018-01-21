@@ -1,7 +1,7 @@
 import UIKit
 
-class LogCell: UITableViewCell {
-    static let defaultIdentifier = "LogCell"
+class EventCell: UITableViewCell {
+    static let defaultIdentifier = "EventCell"
     let labelMargin: CGFloat = 4
     let horizontalPadding: CGFloat = 8
     let verticalPadding: CGFloat = 4
@@ -25,7 +25,7 @@ class LogCell: UITableViewCell {
         }
     }
 
-    var log: Log! {
+    var event: Event! {
         didSet {
             update()
         }
@@ -83,11 +83,11 @@ class LogCell: UITableViewCell {
     }
 
     private func update() {
-        dateLabel.text = dateFormatter.string(from: log.date)
+        dateLabel.text = dateFormatter.string(from: event.date)
 
         var priority: Float = 1000
-        log.labels.forEach {
-            let labelView = LogLabelView(labelText: $0)
+        event.labels.forEach {
+            let labelView = EventLabelView(labelText: $0)
             labelView.setContentCompressionResistancePriority(UILayoutPriority(priority), for: .horizontal)
             labelsView.addArrangedSubview(labelView)
 
@@ -96,6 +96,6 @@ class LogCell: UITableViewCell {
             }
         }
         labelsView.addArrangedSubview(labelsSpacerView)
-        bodyLabel.text = log.body
+        bodyLabel.text = event.body
     }
 }

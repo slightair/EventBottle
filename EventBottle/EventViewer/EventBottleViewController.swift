@@ -1,7 +1,7 @@
 import UIKit
 
-public class LogViewerViewController: UIViewController, UITableViewDataSource {
-    public let logDataSource: LogDataSource
+public class EventBottleViewController: UIViewController, UITableViewDataSource {
+    public let eventDataSource: EventDataSource
 
     private let tableView = UITableView()
     private let activityIndicatorView = UIActivityIndicatorView()
@@ -15,8 +15,8 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
         }
     }
 
-    public init(logDataSource: LogDataSource) {
-        self.logDataSource = logDataSource
+    public init(eventDataSource: EventDataSource) {
+        self.eventDataSource = eventDataSource
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,7 +46,7 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
         isLoading = true
         errorMessageBackgroundView.isHidden = true
 
-        logDataSource.load { success in
+        eventDataSource.load { success in
             if success {
                 self.tableView.reloadData()
             } else {
@@ -67,7 +67,7 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-        tableView.register(LogCell.self, forCellReuseIdentifier: LogCell.defaultIdentifier)
+        tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.defaultIdentifier)
 
         tableView.dataSource = self
 
@@ -88,7 +88,7 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
         activityIndicatorBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         activityIndicatorBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-        errorMessageLabel.text = "Could not load logs"
+        errorMessageLabel.text = "Could not load events"
         errorMessageLabel.textColor = .darkGray
 
         errorMessageBackgroundView.addSubview(errorMessageLabel)
@@ -108,15 +108,15 @@ public class LogViewerViewController: UIViewController, UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return logDataSource.logs.count
+        return eventDataSource.events.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: LogCell.defaultIdentifier, for: indexPath) as? LogCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.defaultIdentifier, for: indexPath) as? EventCell else {
             fatalError("Unexpected cell")
         }
 
-        cell.log = logDataSource.logs[indexPath.row]
+        cell.event = eventDataSource.events[indexPath.row]
 
         return cell
     }

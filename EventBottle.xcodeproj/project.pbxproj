@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F426E152011CE9A003B908E /* FileLogDataSource+TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F426E142011CE9A003B908E /* FileLogDataSource+TestUtil.swift */; };
+		573FDF3320143DD400526C4D /* EventBottleFileEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FDF3220143DD400526C4D /* EventBottleFileEventStore.swift */; };
+		7F426E152011CE9A003B908E /* FileEventDataSource+TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F426E142011CE9A003B908E /* FileEventDataSource+TestUtil.swift */; };
 		7FF077E6200CA18E009985CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077E5200CA18E009985CA /* AppDelegate.swift */; };
 		7FF077E8200CA18E009985CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077E7200CA18E009985CA /* ViewController.swift */; };
 		7FF077EB200CA18E009985CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077E9200CA18E009985CA /* Main.storyboard */; };
 		7FF077ED200CA18E009985CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077EC200CA18E009985CA /* Assets.xcassets */; };
 		7FF077F0200CA18E009985CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077EE200CA18E009985CA /* LaunchScreen.storyboard */; };
-		7FF077FB200CA18E009985CA /* FileLogStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077FA200CA18E009985CA /* FileLogStoreTests.swift */; };
-		7FF07811200CA32F009985CA /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07807200CA32F009985CA /* LogCell.swift */; };
-		7FF07812200CA32F009985CA /* LogLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07808200CA32F009985CA /* LogLabelView.swift */; };
-		7FF07813200CA32F009985CA /* LogViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07809200CA32F009985CA /* LogViewerViewController.swift */; };
-		7FF07814200CA32F009985CA /* FileLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780B200CA32F009985CA /* FileLogDataSource.swift */; };
-		7FF07815200CA32F009985CA /* LogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780C200CA32F009985CA /* LogDataSource.swift */; };
-		7FF07816200CA32F009985CA /* XCGLoggerFileLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780D200CA32F009985CA /* XCGLoggerFileLogDataSource.swift */; };
-		7FF07817200CA32F009985CA /* FileLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780F200CA32F009985CA /* FileLogStore.swift */; };
-		7FF07818200CA32F009985CA /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07810200CA32F009985CA /* LogStore.swift */; };
-		7FF0781D200DB2E6009985CA /* BasketFileLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0781C200DB2E6009985CA /* BasketFileLogDataSource.swift */; };
-		7FF0781F200DCA17009985CA /* BasketFileLogDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0781E200DCA17009985CA /* BasketFileLogDataSourceTests.swift */; };
+		7FF077FB200CA18E009985CA /* EventBottleFileEventStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077FA200CA18E009985CA /* EventBottleFileEventStoreTests.swift */; };
+		7FF07811200CA32F009985CA /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07807200CA32F009985CA /* EventCell.swift */; };
+		7FF07812200CA32F009985CA /* EventLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07808200CA32F009985CA /* EventLabelView.swift */; };
+		7FF07813200CA32F009985CA /* EventBottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07809200CA32F009985CA /* EventBottleViewController.swift */; };
+		7FF07814200CA32F009985CA /* FileEventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780B200CA32F009985CA /* FileEventDataSource.swift */; };
+		7FF07815200CA32F009985CA /* EventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780C200CA32F009985CA /* EventDataSource.swift */; };
+		7FF07817200CA32F009985CA /* FileEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780F200CA32F009985CA /* FileEventStore.swift */; };
+		7FF07818200CA32F009985CA /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07810200CA32F009985CA /* EventStore.swift */; };
+		7FF0781D200DB2E6009985CA /* EventBottleFileEventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0781C200DB2E6009985CA /* EventBottleFileEventDataSource.swift */; };
+		7FF0781F200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0781E200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,33 +32,33 @@
 			containerPortal = 7FF077DA200CA18D009985CA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7FF077E1200CA18E009985CA;
-			remoteInfo = Basket;
+			remoteInfo = EventBottle;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F426E142011CE9A003B908E /* FileLogDataSource+TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileLogDataSource+TestUtil.swift"; sourceTree = "<group>"; };
-		7FF077E2200CA18E009985CA /* Basket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Basket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		573FDF3220143DD400526C4D /* EventBottleFileEventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventStore.swift; sourceTree = "<group>"; };
+		7F426E142011CE9A003B908E /* FileEventDataSource+TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileEventDataSource+TestUtil.swift"; sourceTree = "<group>"; };
+		7FF077E2200CA18E009985CA /* EventBottle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventBottle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF077E5200CA18E009985CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF077E7200CA18E009985CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7FF077EA200CA18E009985CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FF077EC200CA18E009985CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FF077EF200CA18E009985CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FF077F1200CA18E009985CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FF077F6200CA18E009985CA /* BasketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FF077FA200CA18E009985CA /* FileLogStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLogStoreTests.swift; sourceTree = "<group>"; };
+		7FF077F6200CA18E009985CA /* EventBottleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventBottleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF077FA200CA18E009985CA /* EventBottleFileEventStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventStoreTests.swift; sourceTree = "<group>"; };
 		7FF077FC200CA18E009985CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FF07807200CA32F009985CA /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
-		7FF07808200CA32F009985CA /* LogLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLabelView.swift; sourceTree = "<group>"; };
-		7FF07809200CA32F009985CA /* LogViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewerViewController.swift; sourceTree = "<group>"; };
-		7FF0780B200CA32F009985CA /* FileLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogDataSource.swift; sourceTree = "<group>"; };
-		7FF0780C200CA32F009985CA /* LogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDataSource.swift; sourceTree = "<group>"; };
-		7FF0780D200CA32F009985CA /* XCGLoggerFileLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLoggerFileLogDataSource.swift; sourceTree = "<group>"; };
-		7FF0780F200CA32F009985CA /* FileLogStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogStore.swift; sourceTree = "<group>"; };
-		7FF07810200CA32F009985CA /* LogStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
-		7FF07819200CA378009985CA /* Basket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Basket-Bridging-Header.h"; sourceTree = "<group>"; };
-		7FF0781C200DB2E6009985CA /* BasketFileLogDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketFileLogDataSource.swift; sourceTree = "<group>"; };
-		7FF0781E200DCA17009985CA /* BasketFileLogDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketFileLogDataSourceTests.swift; sourceTree = "<group>"; };
+		7FF07807200CA32F009985CA /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		7FF07808200CA32F009985CA /* EventLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLabelView.swift; sourceTree = "<group>"; };
+		7FF07809200CA32F009985CA /* EventBottleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBottleViewController.swift; sourceTree = "<group>"; };
+		7FF0780B200CA32F009985CA /* FileEventDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEventDataSource.swift; sourceTree = "<group>"; };
+		7FF0780C200CA32F009985CA /* EventDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataSource.swift; sourceTree = "<group>"; };
+		7FF0780F200CA32F009985CA /* FileEventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEventStore.swift; sourceTree = "<group>"; };
+		7FF07810200CA32F009985CA /* EventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		7FF07819200CA378009985CA /* EventBottle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBottle-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FF0781C200DB2E6009985CA /* EventBottleFileEventDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventDataSource.swift; sourceTree = "<group>"; };
+		7FF0781E200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 		7FF077D9200CA18D009985CA = {
 			isa = PBXGroup;
 			children = (
-				7FF077E4200CA18E009985CA /* Basket */,
-				7FF077F9200CA18E009985CA /* BasketTests */,
+				7FF077E4200CA18E009985CA /* EventBottle */,
+				7FF077F9200CA18E009985CA /* EventBottleTests */,
 				7FF077E3200CA18E009985CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,84 +91,76 @@
 		7FF077E3200CA18E009985CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FF077E2200CA18E009985CA /* Basket.app */,
-				7FF077F6200CA18E009985CA /* BasketTests.xctest */,
+				7FF077E2200CA18E009985CA /* EventBottle.app */,
+				7FF077F6200CA18E009985CA /* EventBottleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7FF077E4200CA18E009985CA /* Basket */ = {
+		7FF077E4200CA18E009985CA /* EventBottle */ = {
 			isa = PBXGroup;
 			children = (
-				7FF07805200CA2EA009985CA /* Log */,
+				7FF0780A200CA32F009985CA /* EventDataSource */,
+				7FF0780E200CA32F009985CA /* EventStore */,
+				7FF07806200CA32F009985CA /* EventViewer */,
 				7FF077E5200CA18E009985CA /* AppDelegate.swift */,
 				7FF077E7200CA18E009985CA /* ViewController.swift */,
 				7FF077E9200CA18E009985CA /* Main.storyboard */,
 				7FF077EC200CA18E009985CA /* Assets.xcassets */,
 				7FF077EE200CA18E009985CA /* LaunchScreen.storyboard */,
 				7FF077F1200CA18E009985CA /* Info.plist */,
-				7FF07819200CA378009985CA /* Basket-Bridging-Header.h */,
+				7FF07819200CA378009985CA /* EventBottle-Bridging-Header.h */,
 			);
-			path = Basket;
+			path = EventBottle;
 			sourceTree = "<group>";
 		};
-		7FF077F9200CA18E009985CA /* BasketTests */ = {
+		7FF077F9200CA18E009985CA /* EventBottleTests */ = {
 			isa = PBXGroup;
 			children = (
-				7FF077FA200CA18E009985CA /* FileLogStoreTests.swift */,
-				7F426E142011CE9A003B908E /* FileLogDataSource+TestUtil.swift */,
-				7FF0781E200DCA17009985CA /* BasketFileLogDataSourceTests.swift */,
+				7F426E142011CE9A003B908E /* FileEventDataSource+TestUtil.swift */,
+				7FF0781E200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift */,
+				7FF077FA200CA18E009985CA /* EventBottleFileEventStoreTests.swift */,
 				7FF077FC200CA18E009985CA /* Info.plist */,
 			);
-			path = BasketTests;
+			path = EventBottleTests;
 			sourceTree = "<group>";
 		};
-		7FF07805200CA2EA009985CA /* Log */ = {
+		7FF07806200CA32F009985CA /* EventViewer */ = {
 			isa = PBXGroup;
 			children = (
-				7FF0780A200CA32F009985CA /* LogDataSource */,
-				7FF0780E200CA32F009985CA /* LogStore */,
-				7FF07806200CA32F009985CA /* LogViewer */,
+				7FF07807200CA32F009985CA /* EventCell.swift */,
+				7FF07808200CA32F009985CA /* EventLabelView.swift */,
+				7FF07809200CA32F009985CA /* EventBottleViewController.swift */,
 			);
-			path = Log;
+			path = EventViewer;
 			sourceTree = "<group>";
 		};
-		7FF07806200CA32F009985CA /* LogViewer */ = {
+		7FF0780A200CA32F009985CA /* EventDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				7FF07807200CA32F009985CA /* LogCell.swift */,
-				7FF07808200CA32F009985CA /* LogLabelView.swift */,
-				7FF07809200CA32F009985CA /* LogViewerViewController.swift */,
+				7FF0780C200CA32F009985CA /* EventDataSource.swift */,
+				7FF0780B200CA32F009985CA /* FileEventDataSource.swift */,
+				7FF0781C200DB2E6009985CA /* EventBottleFileEventDataSource.swift */,
 			);
-			path = LogViewer;
+			path = EventDataSource;
 			sourceTree = "<group>";
 		};
-		7FF0780A200CA32F009985CA /* LogDataSource */ = {
+		7FF0780E200CA32F009985CA /* EventStore */ = {
 			isa = PBXGroup;
 			children = (
-				7FF0780B200CA32F009985CA /* FileLogDataSource.swift */,
-				7FF0780C200CA32F009985CA /* LogDataSource.swift */,
-				7FF0780D200CA32F009985CA /* XCGLoggerFileLogDataSource.swift */,
-				7FF0781C200DB2E6009985CA /* BasketFileLogDataSource.swift */,
+				7FF07810200CA32F009985CA /* EventStore.swift */,
+				7FF0780F200CA32F009985CA /* FileEventStore.swift */,
+				573FDF3220143DD400526C4D /* EventBottleFileEventStore.swift */,
 			);
-			path = LogDataSource;
-			sourceTree = "<group>";
-		};
-		7FF0780E200CA32F009985CA /* LogStore */ = {
-			isa = PBXGroup;
-			children = (
-				7FF0780F200CA32F009985CA /* FileLogStore.swift */,
-				7FF07810200CA32F009985CA /* LogStore.swift */,
-			);
-			path = LogStore;
+			path = EventStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7FF077E1200CA18E009985CA /* Basket */ = {
+		7FF077E1200CA18E009985CA /* EventBottle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FF077FF200CA18E009985CA /* Build configuration list for PBXNativeTarget "Basket" */;
+			buildConfigurationList = 7FF077FF200CA18E009985CA /* Build configuration list for PBXNativeTarget "EventBottle" */;
 			buildPhases = (
 				7FF077DE200CA18E009985CA /* Sources */,
 				7FF077DF200CA18E009985CA /* Frameworks */,
@@ -178,14 +170,14 @@
 			);
 			dependencies = (
 			);
-			name = Basket;
-			productName = Basket;
-			productReference = 7FF077E2200CA18E009985CA /* Basket.app */;
+			name = EventBottle;
+			productName = EventBottle;
+			productReference = 7FF077E2200CA18E009985CA /* EventBottle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7FF077F5200CA18E009985CA /* BasketTests */ = {
+		7FF077F5200CA18E009985CA /* EventBottleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FF07802200CA18E009985CA /* Build configuration list for PBXNativeTarget "BasketTests" */;
+			buildConfigurationList = 7FF07802200CA18E009985CA /* Build configuration list for PBXNativeTarget "EventBottleTests" */;
 			buildPhases = (
 				7FF077F2200CA18E009985CA /* Sources */,
 				7FF077F3200CA18E009985CA /* Frameworks */,
@@ -196,9 +188,9 @@
 			dependencies = (
 				7FF077F8200CA18E009985CA /* PBXTargetDependency */,
 			);
-			name = BasketTests;
-			productName = BasketTests;
-			productReference = 7FF077F6200CA18E009985CA /* BasketTests.xctest */;
+			name = EventBottleTests;
+			productName = EventBottleTests;
+			productReference = 7FF077F6200CA18E009985CA /* EventBottleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7FF077DD200CA18D009985CA /* Build configuration list for PBXProject "Basket" */;
+			buildConfigurationList = 7FF077DD200CA18D009985CA /* Build configuration list for PBXProject "EventBottle" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -235,8 +227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FF077E1200CA18E009985CA /* Basket */,
-				7FF077F5200CA18E009985CA /* BasketTests */,
+				7FF077E1200CA18E009985CA /* EventBottle */,
+				7FF077F5200CA18E009985CA /* EventBottleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,17 +258,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FF07813200CA32F009985CA /* LogViewerViewController.swift in Sources */,
-				7FF0781D200DB2E6009985CA /* BasketFileLogDataSource.swift in Sources */,
-				7FF07814200CA32F009985CA /* FileLogDataSource.swift in Sources */,
+				7FF07813200CA32F009985CA /* EventBottleViewController.swift in Sources */,
+				7FF0781D200DB2E6009985CA /* EventBottleFileEventDataSource.swift in Sources */,
+				7FF07814200CA32F009985CA /* FileEventDataSource.swift in Sources */,
 				7FF077E8200CA18E009985CA /* ViewController.swift in Sources */,
 				7FF077E6200CA18E009985CA /* AppDelegate.swift in Sources */,
-				7FF07817200CA32F009985CA /* FileLogStore.swift in Sources */,
-				7FF07816200CA32F009985CA /* XCGLoggerFileLogDataSource.swift in Sources */,
-				7FF07818200CA32F009985CA /* LogStore.swift in Sources */,
-				7FF07812200CA32F009985CA /* LogLabelView.swift in Sources */,
-				7FF07815200CA32F009985CA /* LogDataSource.swift in Sources */,
-				7FF07811200CA32F009985CA /* LogCell.swift in Sources */,
+				7FF07817200CA32F009985CA /* FileEventStore.swift in Sources */,
+				7FF07818200CA32F009985CA /* EventStore.swift in Sources */,
+				7FF07812200CA32F009985CA /* EventLabelView.swift in Sources */,
+				573FDF3320143DD400526C4D /* EventBottleFileEventStore.swift in Sources */,
+				7FF07815200CA32F009985CA /* EventDataSource.swift in Sources */,
+				7FF07811200CA32F009985CA /* EventCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,9 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FF077FB200CA18E009985CA /* FileLogStoreTests.swift in Sources */,
-				7FF0781F200DCA17009985CA /* BasketFileLogDataSourceTests.swift in Sources */,
-				7F426E152011CE9A003B908E /* FileLogDataSource+TestUtil.swift in Sources */,
+				7FF077FB200CA18E009985CA /* EventBottleFileEventStoreTests.swift in Sources */,
+				7FF0781F200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift in Sources */,
+				7F426E152011CE9A003B908E /* FileEventDataSource+TestUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +287,7 @@
 /* Begin PBXTargetDependency section */
 		7FF077F8200CA18E009985CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7FF077E1200CA18E009985CA /* Basket */;
+			target = 7FF077E1200CA18E009985CA /* EventBottle */;
 			targetProxy = 7FF077F7200CA18E009985CA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -433,11 +425,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Basket/Info.plist;
+				INFOPLIST_FILE = EventBottle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.Basket;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.EventBottle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Basket/Basket-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBottle/EventBottle-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,11 +442,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Basket/Info.plist;
+				INFOPLIST_FILE = EventBottle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.Basket;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.EventBottle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Basket/Basket-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventBottle/EventBottle-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -466,13 +458,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BasketTests/Info.plist;
+				INFOPLIST_FILE = EventBottleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.BasketTests;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.EventBottleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Basket.app/Basket";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventBottle.app/EventBottle";
 			};
 			name = Debug;
 		};
@@ -482,20 +474,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BasketTests/Info.plist;
+				INFOPLIST_FILE = EventBottleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.BasketTests;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.clv.ios.EventBottleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Basket.app/Basket";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventBottle.app/EventBottle";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7FF077DD200CA18D009985CA /* Build configuration list for PBXProject "Basket" */ = {
+		7FF077DD200CA18D009985CA /* Build configuration list for PBXProject "EventBottle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF077FD200CA18E009985CA /* Debug */,
@@ -504,7 +496,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FF077FF200CA18E009985CA /* Build configuration list for PBXNativeTarget "Basket" */ = {
+		7FF077FF200CA18E009985CA /* Build configuration list for PBXNativeTarget "EventBottle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF07800200CA18E009985CA /* Debug */,
@@ -513,7 +505,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FF07802200CA18E009985CA /* Build configuration list for PBXNativeTarget "BasketTests" */ = {
+		7FF07802200CA18E009985CA /* Build configuration list for PBXNativeTarget "EventBottleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF07803200CA18E009985CA /* Debug */,

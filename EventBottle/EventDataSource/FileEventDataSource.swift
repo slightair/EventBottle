@@ -1,31 +1,31 @@
 import Foundation
 
-open class FileLogDataSource: LogDataSource {
+open class FileEventDataSource: EventDataSource {
     public let bufferSize = 4096
     public let loadQueue = DispatchQueue.global(qos: .background)
 
     public let fileURL: URL
 
-    public var logs: [Log] = []
-    public var currentLogDate: Date?
-    public var currentLogLabels: [String] = []
-    public var currentLogBody: String = ""
+    public var events: [Event] = []
+    public var currentEventDate: Date?
+    public var currentEventLabels: [String] = []
+    public var currentEventBody: String = ""
 
     public init(fileURL: URL) {
         self.fileURL = fileURL
     }
 
     open func reset() {
-        logs = []
-        currentLogDate = nil
-        currentLogLabels = []
-        currentLogBody = ""
+        events = []
+        currentEventDate = nil
+        currentEventLabels = []
+        currentEventBody = ""
     }
 
     open func readLine(_: String) {
     }
 
-    open func didLoadLogFile() {
+    open func didLoadEvents() {
     }
 
     public func load(completion: @escaping (Bool) -> Void) {
@@ -71,7 +71,7 @@ open class FileLogDataSource: LogDataSource {
                 }
             }
 
-            self.didLoadLogFile()
+            self.didLoadEvents()
 
             DispatchQueue.main.async {
                 completion(true)

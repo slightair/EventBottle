@@ -7,23 +7,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let path = NSTemporaryDirectory() + "hoge.log"
+        let path = NSTemporaryDirectory() + "hoge.events"
         let fileURL = URL(fileURLWithPath: path)
         print(path)
 
-        let logStore = FileLogStore(fileURL: fileURL)
+        let eventStore = EventBottleFileEventStore(fileURL: fileURL)
         let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController() as! ViewController
-        viewController.logStore = logStore
+        viewController.eventStore = eventStore
         viewController.title = "View"
 
-        let logDataSource = BasketFileLogDataSource(fileURL: fileURL)
-        let logViewerViewController = LogViewerViewController(logDataSource: logDataSource)
-        logViewerViewController.title = "Logs"
+        let eventDataSource = EventBottleFileEventDataSource(fileURL: fileURL)
+        let eventBottleViewController = EventBottleViewController(eventDataSource: eventDataSource)
+        eventBottleViewController.title = "Events"
 
         let tabController = UITabBarController()
         tabController.viewControllers = [
             viewController,
-            logViewerViewController,
+            eventBottleViewController,
         ].map { UINavigationController(rootViewController: $0) }
         window?.rootViewController = tabController
         window?.makeKeyAndVisible()

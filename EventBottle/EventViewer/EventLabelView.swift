@@ -1,6 +1,6 @@
 import UIKit
 
-class LogLabelView: UIView {
+class EventLabelView: UIView {
     private let horizontalPadding: CGFloat = 4
     private let verticalPadding: CGFloat = 1
     private let cornerRadius: CGFloat = 4
@@ -27,12 +27,12 @@ class LogLabelView: UIView {
     }
 
     var labelColor: UIColor {
-        if let color = LogLabelView.colors[labelText] {
+        if let color = EventLabelView.colors[labelText] {
             return color
         }
 
         let color = self.color(from: labelText)
-        LogLabelView.colors[labelText] = color
+        EventLabelView.colors[labelText] = color
 
         return color
     }

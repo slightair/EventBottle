@@ -1,7 +1,7 @@
 import Foundation
 
-public class BasketFileLogDataSource: FileLogDataSource {
-    let dateFormatter = FileLogStore.dateFormatter
+public class EventBottleFileEventDataSource: FileEventDataSource {
+    let dateFormatter = EventBottleFileEventStore.dateFormatter
 
     let headerPattern: NSRegularExpression = {
         guard let regexp = try? NSRegularExpression(pattern: "^date:(.+)\tlabels:((?:\".+?\",?)+?)\tbody:(.+)$") else {
@@ -31,21 +31,21 @@ public class BasketFileLogDataSource: FileLogDataSource {
         if let result = headerPattern.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)) {
             let terms = (1 ..< result.numberOfRanges).map { String(line[Range(result.range(at: $0), in: line)!]) }
 
-            if let currentLogDate = currentLogDate {
-                logs.append(Log(date: currentLogDate, labels: currentLogLabels, body: currentLogBody))
+            if let currentEventDate = currentEventDate {
+                events.append(Event(date: currentEventDate, labels: currentEventLabels, body: currentEventBody))
             }
 
-            currentLogDate = dateFormatter.date(from: terms[0])
-            currentLogLabels = BasketFileLogDataSource.parseLabels(terms[1])
-            currentLogBody = terms[2]
+            currentEventDate = dateFormatter.date(from: terms[0])
+            currentEventLabels = EventBottleFileEventDataSource.parseLabels(terms[1])
+            currentEventBody = terms[2]
         } else {
-            currentLogBody += "\n\(line)"
+            currentEventBody += "\n\(line)"
         }
     }
 
-    public override func didLoadLogFile() {
-        if let currentLogDate = currentLogDate {
-            logs.append(Log(date: currentLogDate, labels: currentLogLabels, body: currentLogBody))
+    public override func didLoadEvents() {
+        if let currentEventDate = currentEventDate {
+            events.append(Event(date: currentEventDate, labels: currentEventLabels, body: currentEventBody))
         }
     }
 }
