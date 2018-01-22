@@ -10,15 +10,7 @@ public class EventBottleFileEventStore: FileEventStore {
         return formatter
     }()
 
-    public override func put(event: Any, date: Date, labels: [String]) throws {
-        let fileHandle = try openFileIfNeeded()
-        guard let data = (EventBottleFileEventStore.string(from: event, date: date, labels: labels) + "\n").data(using: .utf8) else {
-            throw FileEventStoreError.couldNotEncodeEventData
-        }
-        fileHandle.write(data)
-    }
-
-    public static func string(from event: Any, date: Date, labels: [String]) -> String {
+    public static func recordString(from event: Any, date: Date, labels: [String]) -> String {
         let dateString = EventBottleFileEventStore.dateFormatter.string(from: date)
         let labelsString = labels.map { $0.replacingOccurrences(of: "\"", with: "\\\"") }.map { "\"\($0)\"" }.joined(separator: ",")
 
@@ -27,5 +19,12 @@ public class EventBottleFileEventStore: FileEventStore {
             "labels:\(labelsString)",
             "body:\(event)",
         ].joined(separator: "\t")
+    }
+
+    override public class func recordData(from event: Any, date: Date, labels: [String]) throws -> Data {
+        guard let data = (recordString(from: event, date: date, labels: labels) + "\n").data(using: .utf8) else {
+            throw FileEventStoreError.couldNotEncodeEventData
+        }
+        return data
     }
 }

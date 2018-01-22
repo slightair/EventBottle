@@ -5,7 +5,7 @@ public enum FileEventStoreError: Error {
     case couldNotEncodeEventData
 }
 
-public class FileEventStore: EventStore {
+open class FileEventStore: EventStore {
     public let fileURL: URL
     private var fileHandle: FileHandle?
 
@@ -19,7 +19,7 @@ public class FileEventStore: EventStore {
         }
     }
 
-    public func openFileIfNeeded() throws -> FileHandle {
+    private func openFileIfNeeded() throws -> FileHandle {
         if let fileHandle = self.fileHandle {
             return fileHandle
         }
@@ -38,7 +38,16 @@ public class FileEventStore: EventStore {
         return fileHandle
     }
 
-    public func put(event _: Any, date _: Date, labels _: [String]) throws {
+    public func put(event: Any, date: Date, labels: [String]) throws {
+        let fileHandle = try openFileIfNeeded()
+        let data = try type(of: self).recordData(from: event, date: date, labels: labels)
+
+        fileHandle.write(data)
+    }
+
+    open class func recordData(from event: Any, date: Date, labels: [String]) throws -> Data {
         assertionFailure("not implemented")
+
+        throw FileEventStoreError.couldNotEncodeEventData
     }
 }
