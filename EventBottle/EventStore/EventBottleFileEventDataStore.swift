@@ -1,6 +1,6 @@
 import Foundation
 
-public class EventBottleFileEventStore: FileEventStore {
+public class EventBottleFileEventDataStore: FileEventDataStore {
     public static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
@@ -11,7 +11,7 @@ public class EventBottleFileEventStore: FileEventStore {
     }()
 
     public static func recordString(from event: Any, date: Date, labels: [String]) -> String {
-        let dateString = EventBottleFileEventStore.dateFormatter.string(from: date)
+        let dateString = EventBottleFileEventDataStore.dateFormatter.string(from: date)
         let labelsString = labels.map { $0.replacingOccurrences(of: "\"", with: "\\\"") }.map { "\"\($0)\"" }.joined(separator: ",")
 
         return [
@@ -21,9 +21,9 @@ public class EventBottleFileEventStore: FileEventStore {
         ].joined(separator: "\t")
     }
 
-    override public class func recordData(from event: Any, date: Date, labels: [String]) throws -> Data {
+    public override class func recordData(from event: Any, date: Date, labels: [String]) throws -> Data {
         guard let data = (recordString(from: event, date: date, labels: labels) + "\n").data(using: .utf8) else {
-            throw FileEventStoreError.couldNotEncodeEventData
+            throw FileEventDataStoreError.couldNotEncodeEventData
         }
         return data
     }

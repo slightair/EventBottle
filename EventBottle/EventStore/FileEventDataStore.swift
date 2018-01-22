@@ -1,11 +1,11 @@
 import Foundation
 
-public enum FileEventStoreError: Error {
+public enum FileEventDataStoreError: Error {
     case couldNotCreateFile
     case couldNotEncodeEventData
 }
 
-open class FileEventStore: EventStore {
+open class FileEventDataStore: EventDataStore {
     public let fileURL: URL
     private var fileHandle: FileHandle?
 
@@ -27,7 +27,7 @@ open class FileEventStore: EventStore {
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: fileURL.path) {
             guard fileManager.createFile(atPath: fileURL.path, contents: nil) else {
-                throw FileEventStoreError.couldNotCreateFile
+                throw FileEventDataStoreError.couldNotCreateFile
             }
         }
 
@@ -45,9 +45,9 @@ open class FileEventStore: EventStore {
         fileHandle.write(data)
     }
 
-    open class func recordData(from event: Any, date: Date, labels: [String]) throws -> Data {
+    open class func recordData(from _: Any, date _: Date, labels _: [String]) throws -> Data {
         assertionFailure("not implemented")
 
-        throw FileEventStoreError.couldNotEncodeEventData
+        throw FileEventDataStoreError.couldNotEncodeEventData
     }
 }

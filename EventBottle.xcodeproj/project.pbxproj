@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		573FDF3320143DD400526C4D /* EventBottleFileEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FDF3220143DD400526C4D /* EventBottleFileEventStore.swift */; };
+		573FDF3320143DD400526C4D /* EventBottleFileEventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FDF3220143DD400526C4D /* EventBottleFileEventDataStore.swift */; };
 		7F426E152011CE9A003B908E /* FileEventDataSource+TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F426E142011CE9A003B908E /* FileEventDataSource+TestUtil.swift */; };
 		7FF077E6200CA18E009985CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077E5200CA18E009985CA /* AppDelegate.swift */; };
 		7FF077E8200CA18E009985CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077E7200CA18E009985CA /* ViewController.swift */; };
 		7FF077EB200CA18E009985CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077E9200CA18E009985CA /* Main.storyboard */; };
 		7FF077ED200CA18E009985CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077EC200CA18E009985CA /* Assets.xcassets */; };
 		7FF077F0200CA18E009985CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF077EE200CA18E009985CA /* LaunchScreen.storyboard */; };
-		7FF077FB200CA18E009985CA /* EventBottleFileEventStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077FA200CA18E009985CA /* EventBottleFileEventStoreTests.swift */; };
+		7FF077FB200CA18E009985CA /* EventBottleFileEventDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF077FA200CA18E009985CA /* EventBottleFileEventDataStoreTests.swift */; };
 		7FF07811200CA32F009985CA /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07807200CA32F009985CA /* EventCell.swift */; };
 		7FF07812200CA32F009985CA /* EventLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07808200CA32F009985CA /* EventLabelView.swift */; };
 		7FF07813200CA32F009985CA /* EventBottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07809200CA32F009985CA /* EventBottleViewController.swift */; };
 		7FF07814200CA32F009985CA /* FileEventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780B200CA32F009985CA /* FileEventDataSource.swift */; };
 		7FF07815200CA32F009985CA /* EventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780C200CA32F009985CA /* EventDataSource.swift */; };
-		7FF07817200CA32F009985CA /* FileEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780F200CA32F009985CA /* FileEventStore.swift */; };
-		7FF07818200CA32F009985CA /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07810200CA32F009985CA /* EventStore.swift */; };
+		7FF07817200CA32F009985CA /* FileEventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0780F200CA32F009985CA /* FileEventDataStore.swift */; };
+		7FF07818200CA32F009985CA /* EventDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF07810200CA32F009985CA /* EventDataStore.swift */; };
 		7FF0781D200DB2E6009985CA /* EventBottleFileEventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0781C200DB2E6009985CA /* EventBottleFileEventDataSource.swift */; };
 		7FF0781F200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0781E200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		573FDF3220143DD400526C4D /* EventBottleFileEventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventStore.swift; sourceTree = "<group>"; };
+		573FDF3220143DD400526C4D /* EventBottleFileEventDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventDataStore.swift; sourceTree = "<group>"; };
 		7F426E142011CE9A003B908E /* FileEventDataSource+TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileEventDataSource+TestUtil.swift"; sourceTree = "<group>"; };
 		7FF077E2200CA18E009985CA /* EventBottle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventBottle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF077E5200CA18E009985CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,15 +47,15 @@
 		7FF077EF200CA18E009985CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FF077F1200CA18E009985CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FF077F6200CA18E009985CA /* EventBottleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventBottleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FF077FA200CA18E009985CA /* EventBottleFileEventStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventStoreTests.swift; sourceTree = "<group>"; };
+		7FF077FA200CA18E009985CA /* EventBottleFileEventDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventDataStoreTests.swift; sourceTree = "<group>"; };
 		7FF077FC200CA18E009985CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FF07807200CA32F009985CA /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		7FF07808200CA32F009985CA /* EventLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLabelView.swift; sourceTree = "<group>"; };
 		7FF07809200CA32F009985CA /* EventBottleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBottleViewController.swift; sourceTree = "<group>"; };
 		7FF0780B200CA32F009985CA /* FileEventDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEventDataSource.swift; sourceTree = "<group>"; };
 		7FF0780C200CA32F009985CA /* EventDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataSource.swift; sourceTree = "<group>"; };
-		7FF0780F200CA32F009985CA /* FileEventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEventStore.swift; sourceTree = "<group>"; };
-		7FF07810200CA32F009985CA /* EventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		7FF0780F200CA32F009985CA /* FileEventDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEventDataStore.swift; sourceTree = "<group>"; };
+		7FF07810200CA32F009985CA /* EventDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDataStore.swift; sourceTree = "<group>"; };
 		7FF07819200CA378009985CA /* EventBottle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventBottle-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FF0781C200DB2E6009985CA /* EventBottleFileEventDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventDataSource.swift; sourceTree = "<group>"; };
 		7FF0781E200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBottleFileEventDataSourceTests.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			children = (
 				7F426E142011CE9A003B908E /* FileEventDataSource+TestUtil.swift */,
 				7FF0781E200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift */,
-				7FF077FA200CA18E009985CA /* EventBottleFileEventStoreTests.swift */,
+				7FF077FA200CA18E009985CA /* EventBottleFileEventDataStoreTests.swift */,
 				7FF077FC200CA18E009985CA /* Info.plist */,
 			);
 			path = EventBottleTests;
@@ -148,9 +148,9 @@
 		7FF0780E200CA32F009985CA /* EventStore */ = {
 			isa = PBXGroup;
 			children = (
-				7FF07810200CA32F009985CA /* EventStore.swift */,
-				7FF0780F200CA32F009985CA /* FileEventStore.swift */,
-				573FDF3220143DD400526C4D /* EventBottleFileEventStore.swift */,
+				7FF07810200CA32F009985CA /* EventDataStore.swift */,
+				7FF0780F200CA32F009985CA /* FileEventDataStore.swift */,
+				573FDF3220143DD400526C4D /* EventBottleFileEventDataStore.swift */,
 			);
 			path = EventStore;
 			sourceTree = "<group>";
@@ -263,10 +263,10 @@
 				7FF07814200CA32F009985CA /* FileEventDataSource.swift in Sources */,
 				7FF077E8200CA18E009985CA /* ViewController.swift in Sources */,
 				7FF077E6200CA18E009985CA /* AppDelegate.swift in Sources */,
-				7FF07817200CA32F009985CA /* FileEventStore.swift in Sources */,
-				7FF07818200CA32F009985CA /* EventStore.swift in Sources */,
+				7FF07817200CA32F009985CA /* FileEventDataStore.swift in Sources */,
+				7FF07818200CA32F009985CA /* EventDataStore.swift in Sources */,
 				7FF07812200CA32F009985CA /* EventLabelView.swift in Sources */,
-				573FDF3320143DD400526C4D /* EventBottleFileEventStore.swift in Sources */,
+				573FDF3320143DD400526C4D /* EventBottleFileEventDataStore.swift in Sources */,
 				7FF07815200CA32F009985CA /* EventDataSource.swift in Sources */,
 				7FF07811200CA32F009985CA /* EventCell.swift in Sources */,
 			);
@@ -276,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FF077FB200CA18E009985CA /* EventBottleFileEventStoreTests.swift in Sources */,
+				7FF077FB200CA18E009985CA /* EventBottleFileEventDataStoreTests.swift in Sources */,
 				7FF0781F200DCA17009985CA /* EventBottleFileEventDataSourceTests.swift in Sources */,
 				7F426E152011CE9A003B908E /* FileEventDataSource+TestUtil.swift in Sources */,
 			);

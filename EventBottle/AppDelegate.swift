@@ -11,9 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fileURL = URL(fileURLWithPath: path)
         print(path)
 
-        let eventStore = EventBottleFileEventStore(fileURL: fileURL)
+        let eventDataStore = EventBottleFileEventDataStore(fileURL: fileURL)
         let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController() as! ViewController
-        viewController.eventStore = eventStore
+        viewController.eventDataStore = eventDataStore
         viewController.title = "View"
 
         let eventDataSource = EventBottleFileEventDataSource(fileURL: fileURL)

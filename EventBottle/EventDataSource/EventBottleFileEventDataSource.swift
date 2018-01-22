@@ -1,7 +1,7 @@
 import Foundation
 
 public class EventBottleFileEventDataSource: FileEventDataSource {
-    let dateFormatter = EventBottleFileEventStore.dateFormatter
+    let dateFormatter = EventBottleFileEventDataStore.dateFormatter
 
     let headerPattern: NSRegularExpression = {
         guard let regexp = try? NSRegularExpression(pattern: "^date:(.+)\tlabels:((?:\".+?\",?)+?)\tbody:(.+)$") else {
