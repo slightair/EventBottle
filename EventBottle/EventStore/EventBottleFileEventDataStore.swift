@@ -1,6 +1,34 @@
 import Foundation
 
 public class EventBottleFileEventDataStore: FileEventDataStore {
+    public static let shared = EventBottleFileEventDataStore()!
+
+    public convenience init?() {
+        guard let fileURL = EventBottleFileEventDataStore.defaultFileURL() else {
+            assertionFailure("Could not locate event file")
+            return nil
+        }
+        self.init(fileURL: fileURL)
+    }
+
+    static func defaultFileURL() -> URL? {
+        guard let libraryCacheURL = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
+            return nil
+        }
+
+        let eventsDirectory = "cc.clv.EventBottle"
+        let fileName = "\(Int(Date().timeIntervalSince1970)).events"
+
+        let fileURL = libraryCacheURL.appendingPathComponent(eventsDirectory).appendingPathComponent(fileName)
+        print(fileURL)
+
+        return fileURL
+    }
+
+    public var dataSource: EventBottleFileEventDataSource {
+        return EventBottleFileEventDataSource(fileURL: fileURL)
+    }
+
     public static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")

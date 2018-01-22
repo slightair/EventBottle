@@ -1,7 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var eventDataStore: EventDataStore?
+    var eventDataStore: EventDataStore = EventBottleFileEventDataStore.shared
 
     var event1count = 0
     var event2count = 0
@@ -9,20 +9,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "View"
     }
 
     @IBAction func didTapEvent1Button(_: Any) {
         event1count += 1
-        try? eventDataStore?.putEvent("event1", labels: ["event", "test", "test\tinclude tab", "test\"include double quote\""])
+        eventDataStore.putEvent("event1", labels: ["event", "test"])
     }
 
     @IBAction func didTapEvent2Button(_: Any) {
         event2count += 1
-        try? eventDataStore?.putEvent(["event": "event2", "count": event2count], labels: ["event", "test", "count"])
+        eventDataStore.putEvent(["event": "event2", "count": event2count], labels: ["event", "test", "count"])
     }
 
     @IBAction func didTapEvent3Button(_: Any) {
         event3count += 1
-        try? eventDataStore?.putEvent(["event": "event3", "allCount": event1count + event2count + event3count], labels: ["event", "test", "count", "all"])
+        eventDataStore.putEvent(["event": "event3", "allCount": event1count + event2count + event3count], labels: ["event", "test", "count", "all"])
     }
 }

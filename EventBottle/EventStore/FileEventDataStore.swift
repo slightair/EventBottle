@@ -23,6 +23,14 @@ open class FileEventDataStore: EventDataStore {
 
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: fileURL.path) {
+            let directoryURL = fileURL.deletingLastPathComponent()
+            do {
+                try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+            } catch {
+                assertionFailure("Could not create directory")
+                return nil
+            }
+
             guard fileManager.createFile(atPath: fileURL.path, contents: nil) else {
                 assertionFailure("Could not create file")
                 return nil

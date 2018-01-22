@@ -15,10 +15,16 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource 
         }
     }
 
+    public convenience init() {
+        self.init(eventDataSource: EventBottleFileEventDataStore.shared.dataSource)
+    }
+
     public init(eventDataSource: EventDataSource) {
         self.eventDataSource = eventDataSource
 
         super.init(nibName: nil, bundle: nil)
+
+        title = "Events"
     }
 
     public required init?(coder _: NSCoder) {
