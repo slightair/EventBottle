@@ -12,7 +12,7 @@ public class EventBottleFileEventDataSource: FileEventDataSource {
 
     public static func parseLabels(_ labelsString: String) -> [String] {
         return labelsString.split(separator: ",")
-            .reduce(Array<String>()) { result, item in
+            .reduce([String]()) { result, item in
                 if item.hasPrefix("\"") {
                     return result + [String(item)]
                 } else {

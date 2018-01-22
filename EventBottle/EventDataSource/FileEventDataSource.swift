@@ -80,7 +80,7 @@ open class FileEventDataSource: EventDataSource {
         }
     }
 
-    public func filterdEvents(with searchText: String, completion: @escaping ([Event]) -> Void) {
+    public func filterdEvents(with _: String, completion: @escaping ([Event]) -> Void) {
         assertionFailure("not implemented")
 
         completion(events)
