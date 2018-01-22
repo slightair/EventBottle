@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G5A-wC-ggb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ISE-3G-FRS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oP7-Fv-BAv" sceneMemberID="firstResponder"/>
+                <viewController id="G5A-wC-ggb" customClass="ViewController" customModule="EventBottle_Example" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2S-vF-ryF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wp2-1U-iZ1">
+                                <rect key="frame" x="0.0" y="173.5" width="375" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-2k-Ilw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="Event1"/>
+                                        <connections>
+                                            <action selector="didTapEvent1Button:" destination="G5A-wC-ggb" eventType="touchUpInside" id="8hh-ep-H6W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xf-Fa-kF8">
+                                        <rect key="frame" x="0.0" y="145" width="375" height="30"/>
+                                        <state key="normal" title="Event2"/>
+                                        <connections>
+                                            <action selector="didTapEvent2Button:" destination="G5A-wC-ggb" eventType="touchUpInside" id="5jF-Jy-kWM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAg-Yz-u61">
+                                        <rect key="frame" x="0.0" y="290" width="375" height="30"/>
+                                        <state key="normal" title="Event3"/>
+                                        <connections>
+                                            <action selector="didTapEvent3Button:" destination="G5A-wC-ggb" eventType="touchUpInside" id="KU4-Ij-7qY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="2Ni-XL-ldb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dhV-Cv-u8y" firstAttribute="trailing" secondItem="wp2-1U-iZ1" secondAttribute="trailing" id="fvj-kg-69U"/>
+                            <constraint firstItem="wp2-1U-iZ1" firstAttribute="centerY" secondItem="l2S-vF-ryF" secondAttribute="centerY" id="rVE-wG-4bD"/>
+                            <constraint firstItem="wp2-1U-iZ1" firstAttribute="leading" secondItem="dhV-Cv-u8y" secondAttribute="leading" id="xP1-h3-uBa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dhV-Cv-u8y"/>
+                    </view>
+                </viewController>
+            </objects>
+        </scene>
+    </scenes>
+</document>

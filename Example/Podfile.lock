@@ -1,0 +1,16 @@
+PODS:
+  - EventBottle (0.1.0)
+
+DEPENDENCIES:
+  - EventBottle (from `../`)
+
+EXTERNAL SOURCES:
+  EventBottle:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EventBottle: eb2bd39f23eed386ddb1fc7e7f7d1f3742ca1e6c
+
+PODFILE CHECKSUM: e146a5e73fe974afdf35ebef5f56d058bd19be58
+
+COCOAPODS: 1.4.0.beta.2

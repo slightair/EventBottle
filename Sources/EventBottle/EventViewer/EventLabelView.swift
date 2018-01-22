@@ -12,17 +12,7 @@ class EventLabelView: UIView {
     private static var colors: [String: UIColor] = [:]
 
     private func color(from text: String) -> UIColor {
-        guard let cData = text.cString(using: .utf8) else {
-            assertionFailure("Cannot convert data to C String")
-            return .gray
-        }
-        let cDataLength = CC_LONG(text.lengthOfBytes(using: .utf8))
-
-        let digestLength = Int(CC_MD5_DIGEST_LENGTH)
-        let digest = UnsafeMutablePointer<UInt8>.allocate(capacity: digestLength)
-        CC_MD5(cData, cDataLength, digest)
-
-        let hue = CGFloat(Double(digest[0]) / 255)
+        let hue = CGFloat(Double(arc4random_uniform(255)) / 255)
         return UIColor(hue: hue, saturation: 0.6, brightness: 0.8, alpha: 1.0)
     }
 
