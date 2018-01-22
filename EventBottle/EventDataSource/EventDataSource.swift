@@ -7,8 +7,6 @@ public struct Event {
 }
 
 public protocol EventDataSource: class {
-    var dateFormatter: DateFormatter { get }
-
     var events: [Event] { get }
 
     func load(completion: @escaping (Bool) -> Void)

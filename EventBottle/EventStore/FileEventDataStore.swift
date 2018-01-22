@@ -1,11 +1,8 @@
 import Foundation
 
-public enum FileEventDataStoreError: Error {
-    case couldNotCreateFile
-    case couldNotEncodeEventData
-}
-
 open class FileEventDataStore: EventDataStore {
+    public let writeQueue = DispatchQueue.global(qos: .background)
+
     public let fileURL: URL
     private var fileHandle: FileHandle?
 
@@ -19,7 +16,7 @@ open class FileEventDataStore: EventDataStore {
         }
     }
 
-    private func openFileIfNeeded() throws -> FileHandle {
+    private func openFileIfNeeded() -> FileHandle? {
         if let fileHandle = self.fileHandle {
             return fileHandle
         }
@@ -27,27 +24,49 @@ open class FileEventDataStore: EventDataStore {
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: fileURL.path) {
             guard fileManager.createFile(atPath: fileURL.path, contents: nil) else {
-                throw FileEventDataStoreError.couldNotCreateFile
+                assertionFailure("Could not create file")
+                return nil
             }
         }
 
-        let fileHandle = try FileHandle(forWritingTo: fileURL)
+        guard let fileHandle = try? FileHandle(forWritingTo: fileURL) else {
+            assertionFailure("Could not open file")
+            return nil
+        }
+
         fileHandle.seekToEndOfFile()
         self.fileHandle = fileHandle
 
         return fileHandle
     }
 
-    public func put(event: Any, date: Date, labels: [String]) throws {
-        let fileHandle = try openFileIfNeeded()
-        let data = try type(of: self).recordData(from: event, date: date, labels: labels)
+    public func put(event: Any, date: Date, labels: [String], completion: ((Bool) -> Void)?) {
+        writeQueue.async {
+            guard let fileHandle = self.openFileIfNeeded() else {
+                DispatchQueue.main.async {
+                    completion?(false)
+                }
+                return
+            }
 
-        fileHandle.write(data)
+            guard let data = type(of: self).recordData(from: event, date: date, labels: labels) else {
+                DispatchQueue.main.async {
+                    completion?(false)
+                }
+                return
+            }
+
+            fileHandle.write(data)
+
+            DispatchQueue.main.async {
+                completion?(true)
+            }
+        }
     }
 
-    open class func recordData(from _: Any, date _: Date, labels _: [String]) throws -> Data {
+    open class func recordData(from _: Any, date _: Date, labels _: [String]) -> Data? {
         assertionFailure("not implemented")
 
-        throw FileEventDataStoreError.couldNotEncodeEventData
+        return nil
     }
 }
