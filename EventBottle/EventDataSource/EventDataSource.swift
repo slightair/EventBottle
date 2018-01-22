@@ -10,6 +10,7 @@ public protocol EventDataSource: class {
     var events: [Event] { get }
 
     func load(completion: @escaping (Bool) -> Void)
+    func filterdEvents(with searchText: String, completion: @escaping ([Event]) -> Void)
 }
 
 extension EventDataSource {

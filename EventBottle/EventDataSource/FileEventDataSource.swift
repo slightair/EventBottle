@@ -23,6 +23,7 @@ open class FileEventDataSource: EventDataSource {
     }
 
     open func readLine(_: String) {
+        assertionFailure("not implemented")
     }
 
     open func didLoadEvents() {
@@ -77,5 +78,11 @@ open class FileEventDataSource: EventDataSource {
                 completion(true)
             }
         }
+    }
+
+    public func filterdEvents(with searchText: String, completion: @escaping ([Event]) -> Void) {
+        assertionFailure("not implemented")
+
+        completion(events)
     }
 }

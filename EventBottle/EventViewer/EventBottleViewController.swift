@@ -1,6 +1,6 @@
 import UIKit
 
-public class EventBottleViewController: UIViewController, UITableViewDataSource {
+public class EventBottleViewController: UIViewController, UITableViewDataSource, UISearchResultsUpdating {
     public let eventDataSource: EventDataSource
 
     private let tableView = UITableView()
@@ -8,12 +8,15 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource 
     private let activityIndicatorBackgroundView = UIView()
     private let errorMessageLabel = UILabel()
     private let errorMessageBackgroundView = UIView()
+    private let searchController = UISearchController(searchResultsController: nil)
 
     private var isLoading = false {
         didSet {
             activityIndicatorBackgroundView.isHidden = !isLoading
         }
     }
+
+    private var filteredEvents: [Event] = []
 
     public convenience init() {
         self.init(eventDataSource: EventBottleFileEventDataStore.shared.dataSource)
@@ -52,6 +55,7 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource 
         isLoading = true
         errorMessageBackgroundView.isHidden = true
 
+        filteredEvents = []
         eventDataSource.load { success in
             if success {
                 self.tableView.reloadData()
@@ -111,10 +115,20 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource 
         errorMessageBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         errorMessageBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         errorMessageBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = true
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return eventDataSource.events.count
+        return searchController.isActive ? filteredEvents.count : eventDataSource.events.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,8 +136,23 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource 
             fatalError("Unexpected cell")
         }
 
-        cell.event = eventDataSource.events[indexPath.row]
+        let event = searchController.isActive ? filteredEvents[indexPath.row] : eventDataSource.events[indexPath.row]
+        cell.event = event
 
         return cell
+    }
+
+    public func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text ?? ""
+
+        if searchText.isEmpty {
+            filteredEvents = eventDataSource.events
+            tableView.reloadData()
+        } else {
+            eventDataSource.filterdEvents(with: searchText) { result in
+                self.filteredEvents = result
+                self.tableView.reloadData()
+            }
+        }
     }
 }

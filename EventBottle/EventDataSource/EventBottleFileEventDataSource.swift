@@ -48,4 +48,17 @@ public class EventBottleFileEventDataSource: FileEventDataSource {
             events.append(Event(date: currentEventDate, labels: currentEventLabels, body: currentEventBody))
         }
     }
+
+    public override func filterdEvents(with searchText: String, completion: @escaping ([Event]) -> Void) {
+        loadQueue.async {
+            let result = self.events.filter { event in
+                // labels: exact match, body: partial match
+                return event.labels.contains(searchText) || event.body.contains(searchText)
+            }
+
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+    }
 }
