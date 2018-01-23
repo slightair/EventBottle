@@ -11,7 +11,7 @@ public class EventBottleFileEventDataStore: FileEventDataStore {
         self.init(fileURL: fileURL)
     }
 
-    static func defaultFileURL() -> URL? {
+    private static func defaultFileURL() -> URL? {
         guard let libraryCacheURL = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
             return nil
         }

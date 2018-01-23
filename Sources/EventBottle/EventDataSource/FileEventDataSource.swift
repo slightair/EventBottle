@@ -1,7 +1,7 @@
 import Foundation
 
 open class FileEventDataSource: EventDataSource {
-    public let bufferSize = 4096
+    private let bufferSize = 4096
     public let loadQueue = DispatchQueue.global(qos: .background)
 
     public let fileURL: URL
@@ -80,7 +80,7 @@ open class FileEventDataSource: EventDataSource {
         }
     }
 
-    public func filterdEvents(with _: String, completion: @escaping ([Event]) -> Void) {
+    open func filterdEvents(with _: String, completion: @escaping ([Event]) -> Void) {
         assertionFailure("not implemented")
 
         completion(events)
