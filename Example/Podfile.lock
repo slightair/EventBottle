@@ -1,5 +1,5 @@
 PODS:
-  - EventBottle (0.1.0)
+  - EventBottle (1.0.0)
 
 DEPENDENCIES:
   - EventBottle (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  EventBottle: eb2bd39f23eed386ddb1fc7e7f7d1f3742ca1e6c
+  EventBottle: 362cef30c7aae8db1378d7e0017de54d04e564de
 
 PODFILE CHECKSUM: e146a5e73fe974afdf35ebef5f56d058bd19be58
 
