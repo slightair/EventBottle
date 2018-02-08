@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 
     @IBAction func didTapEvent3Button(_: Any) {
         event3count += 1
-        eventDataStore.putEvent(["event": "event3", "allCount": event1count + event2count + event3count], labels: ["event", "test", "count", "all"])
+        let veryLongBody = (0..<100).map { _ in "0" }.joined()
+        eventDataStore.putEvent(["event": "event3", "allCount": event1count + event2count + event3count, "body": veryLongBody], labels: ["event", "test", "count", "all"])
     }
 }
