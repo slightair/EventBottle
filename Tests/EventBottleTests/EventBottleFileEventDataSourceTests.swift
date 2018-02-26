@@ -1,5 +1,5 @@
-import XCTest
 import EventBottle
+import XCTest
 
 class EventBottleFileEventDataSourceTests: XCTestCase {
     let dummyFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("test.events")

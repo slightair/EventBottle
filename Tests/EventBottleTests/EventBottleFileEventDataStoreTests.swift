@@ -1,5 +1,5 @@
-import XCTest
 import EventBottle
+import XCTest
 
 class EventBottleFileEventDataStoreTests: XCTestCase {
     func testRecordString() {

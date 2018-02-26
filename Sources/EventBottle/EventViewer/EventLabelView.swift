@@ -11,7 +11,7 @@ class EventLabelView: UIView {
 
     private static var colors: [String: UIColor] = [:]
 
-    private func color(from text: String) -> UIColor {
+    private func color(from _: String) -> UIColor {
         let hue = CGFloat(Double(arc4random_uniform(255)) / 255)
         return UIColor(hue: hue, saturation: 0.6, brightness: 0.8, alpha: 1.0)
     }
