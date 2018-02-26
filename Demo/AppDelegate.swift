@@ -1,5 +1,5 @@
-import UIKit
 import EventBottle
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

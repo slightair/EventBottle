@@ -1,5 +1,5 @@
-import Foundation
 import EventBottle
+import Foundation
 
 extension FileEventDataSource {
     func loadTestEvents(_ events: String) {
