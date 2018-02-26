@@ -9,7 +9,7 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource,
     private let errorMessageLabel = UILabel()
     private let errorMessageBackgroundView = UIView()
     private let searchController = UISearchController(searchResultsController: nil)
-    private let defaultRowHeihgt: CGFloat = 44
+    private let defaultRowHeight: CGFloat = 44
 
     private var isLoading = false {
         didSet {
@@ -77,7 +77,7 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource,
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.estimatedRowHeight = defaultRowHeihgt
+        tableView.estimatedRowHeight = defaultRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.defaultIdentifier)
