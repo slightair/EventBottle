@@ -2,7 +2,7 @@ import EventBottle
 import UIKit
 
 class ViewController: UIViewController {
-    var eventDataStore: EventDataStore = EventBottleFileEventDataStore.shared
+    var eventDataStore: FileEventDataStore = EventBottleFileEventDataStore.shared
 
     var event1count = 0
     var event2count = 0
@@ -12,6 +12,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         title = "View"
+
+        print(eventDataStore.fileURL)
     }
 
     @IBAction func didTapEvent1Button(_: Any) {

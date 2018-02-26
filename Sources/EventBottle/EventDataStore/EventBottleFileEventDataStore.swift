@@ -20,7 +20,6 @@ public class EventBottleFileEventDataStore: FileEventDataStore {
         let fileName = "\(Int(Date().timeIntervalSince1970)).events"
 
         let fileURL = libraryCacheURL.appendingPathComponent(eventsDirectory).appendingPathComponent(fileName)
-        print(fileURL)
 
         return fileURL
     }
