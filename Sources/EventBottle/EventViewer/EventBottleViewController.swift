@@ -78,13 +78,13 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource,
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.estimatedRowHeight = defaultRowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
 
         tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.defaultIdentifier)
 
         tableView.dataSource = self
 
-        activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
+        activityIndicatorView.style = .whiteLarge
         activityIndicatorView.startAnimating()
 
         activityIndicatorBackgroundView.addSubview(activityIndicatorView)

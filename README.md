@@ -63,7 +63,7 @@ You can create custom event data store using `EventDataStore` protocol.
 ## Requirements
 
 - iOS 10+
-- Swift 4
+- Swift 5
 
 ## Installation
 
