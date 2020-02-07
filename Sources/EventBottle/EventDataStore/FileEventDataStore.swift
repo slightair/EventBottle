@@ -49,6 +49,8 @@ open class FileEventDataStore: EventDataStore {
     }
 
     public func put(event: Any, date: Date, labels: [String], completion: ((Bool) -> Void)?) {
+        assert(labels.count > 0, "At least one label is required")
+
         writeQueue.async {
             guard let fileHandle = self.openFileIfNeeded() else {
                 DispatchQueue.main.async {

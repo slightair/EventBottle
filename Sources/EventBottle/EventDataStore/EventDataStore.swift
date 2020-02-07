@@ -5,7 +5,7 @@ public protocol EventDataStore {
 }
 
 public extension EventDataStore {
-    func putEvent(_ event: Any, date: Date = Date(), labels: [String] = [], completion: ((Bool) -> Void)? = nil) {
+    func putEvent(_ event: Any, date: Date = Date(), labels: [String], completion: ((Bool) -> Void)? = nil) {
         put(event: event, date: date, labels: labels, completion: completion)
     }
 }
