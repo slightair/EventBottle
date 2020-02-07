@@ -4,24 +4,26 @@ public class EventBottleFileEventDataStore: FileEventDataStore {
     public static let shared = EventBottleFileEventDataStore()!
 
     public convenience init?() {
-        guard let fileURL = EventBottleFileEventDataStore.defaultFileURL() else {
+        self.init(for: "default")
+    }
+
+    public convenience init?(for name: String) {
+        guard let fileURL = EventBottleFileEventDataStore.fileURL(for: name) else {
             assertionFailure("Could not locate event file")
             return nil
         }
         self.init(fileURL: fileURL)
     }
 
-    private static func defaultFileURL() -> URL? {
+    static func fileURL(for name: String) -> URL? {
         guard let libraryCacheURL = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
             return nil
         }
 
         let eventsDirectory = "cc.clv.EventBottle"
-        let fileName = "\(Int(Date().timeIntervalSince1970)).events"
+        let fileName = "\(name)_\(Int(Date().timeIntervalSince1970)).events"
 
-        let fileURL = libraryCacheURL.appendingPathComponent(eventsDirectory).appendingPathComponent(fileName)
-
-        return fileURL
+        return libraryCacheURL.appendingPathComponent(eventsDirectory).appendingPathComponent(fileName)
     }
 
     public var dataSource: EventBottleFileEventDataSource {
