@@ -11,11 +11,21 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource,
     private let searchController = UISearchController(searchResultsController: nil)
     private let defaultRowHeight: CGFloat = 44
 
+    private lazy var refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
+    private lazy var toggleOrderButtonAsc = UIBarButtonItem(title: "ASC", style: .plain, target: self, action: #selector(toggleOrder(_:)))
+    private lazy var toggleOrderButtonDesc = UIBarButtonItem(title: "DESC", style: .plain, target: self, action: #selector(toggleOrder(_:)))
+
     private var isLoading = false {
         didSet {
             activityIndicatorBackgroundView.isHidden = !isLoading
         }
     }
+
+    enum Order {
+        case ascending, descending
+    }
+
+    private var order: Order = .ascending
 
     private var filteredEvents: [Event] = []
 
@@ -67,9 +77,19 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource,
         }
     }
 
+    @objc private func toggleOrder(_ sender: UIBarButtonItem) {
+        if sender == toggleOrderButtonAsc {
+            order = .descending
+            navigationItem.rightBarButtonItems = [refreshButton, toggleOrderButtonDesc]
+        } else {
+            order = .ascending
+            navigationItem.rightBarButtonItems = [refreshButton, toggleOrderButtonAsc]
+        }
+        tableView.reloadData()
+    }
+
     private func setUpSubviews() {
-        let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
-        navigationItem.rightBarButtonItem = refreshButton
+        navigationItem.rightBarButtonItems = [refreshButton, toggleOrderButtonAsc]
 
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -139,7 +159,8 @@ public class EventBottleViewController: UIViewController, UITableViewDataSource,
             fatalError("Unexpected cell")
         }
 
-        let event = searchController.isActive ? filteredEvents[indexPath.row] : eventDataSource.events[indexPath.row]
+        let events = searchController.isActive ? filteredEvents : eventDataSource.events
+        let event = order == .ascending ? events[indexPath.row] : events[events.count - 1 - indexPath.row]
         cell.event = event
 
         return cell
