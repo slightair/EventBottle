@@ -1,9 +1,10 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
     name: "EventBottle",
+    platforms: [.iOS(.v9)],
     products: [
         .library(
             name: "EventBottle",
@@ -13,8 +14,7 @@ let package = Package(
     targets: [
         .target(
             name: "EventBottle",
-            dependencies: [],
-            exclude: ["EventViewer"]
+            dependencies: []
         ),
         .testTarget(
             name: "EventBottleTests",
