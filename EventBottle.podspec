@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EventBottle'
-  s.version          = '2.1.0'
+  s.version          = '2.2.0'
   s.summary          = 'In app event log recorder/viewer for debugging'
   s.homepage         = 'https://github.com/slightair/EventBottle'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/**/*.{h,swift}'
 
   s.frameworks = 'UIKit'
-  s.swift_version = '5.0.0'
+  s.swift_version = '5.3'
 end
