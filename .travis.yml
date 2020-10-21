@@ -1,10 +1,10 @@
 os: osx
-osx_image: xcode11.3
+osx_image: xcode12.1
 language: objective-c
-before_script: 
+before_script:
   - pod lib lint
 matrix:
   include:
-    - env: NAME=Xcode DESTINATION="platform=iOS Simulator,name=iPhone 11"
+    - env: NAME=Xcode DESTINATION="platform=iOS Simulator,name=iPhone 12"
 script:
   - xcodebuild test -project EventBottle.xcodeproj -scheme EventBottle -destination "${DESTINATION}"
